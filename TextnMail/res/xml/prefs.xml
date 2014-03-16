@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+   
+   <CheckBoxPreference
+       android:title="Sound"
+       android:defaultValue="true"
+       android:key="check_sound"
+       android:summary="Startup music">
+    </CheckBoxPreference>
+   
+	<ListPreference
+	    
+	    android:title="language"
+	    android:key="select_lang"
+	    android:summary="Choose your language"
+	    android:defaultValue="1"
+	    android:entries="@array/PrefList"
+	    android:entryValues="@array/PrefValues"/>
+
+</PreferenceScreen>

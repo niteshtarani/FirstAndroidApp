@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backimg2"
+    android:padding="10dp"
+    android:weightSum="100" >
+
+    <ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="100"
+    android:orientation="vertical" >
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="152dp"
+       android:weightSum="100"
+       android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/email_address_"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email address"
+        android:inputType="textEmailAddress" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/email_subject"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:inputType="text"
+        android:hint="Subject"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/email_body"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10sp"
+        android:layout_weight="21.17"
+        android:gravity="top"
+        android:ems="10"
+        android:hint="Email body"
+        android:lines="5"
+        android:inputType="textMultiLine"
+        />"
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="100">"
+    <Button
+        android:id="@+id/email_clear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:text="Clear" />
+    
+    <ImageButton
+        android:id="@+id/email_voicebtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:contentDescription="speak"
+        android:src="@android:drawable/ic_btn_speak_now" />
+    
+</LinearLayout>
+    <Button
+        android:id="@+id/email_sendbtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Send" />
+     </LinearLayout>
+ </ScrollView>
+</LinearLayout>
