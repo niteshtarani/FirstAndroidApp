@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/text_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\tTHE EMAIL, TEXT and CHAT PACKAGE 
+        \n\n BY:  Nitesh Tarani \t\t\t\t\n\n\t\t\t M.C.A. IIT ROORKEE " />
+
+</LinearLayout>

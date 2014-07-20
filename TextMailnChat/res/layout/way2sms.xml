@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backimg1"
+    android:padding="10dp"
+    android:orientation="vertical" >
+    
+     <ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="100"
+    android:orientation="vertical" >
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="152dp"
+       android:weightSum="100"
+       android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+    <EditText
+        android:id="@+id/editTextPhoneNow2s"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="85.37"
+        android:hint="Phone Number"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/contacts_btnw2s"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Contacts" />
+ 	
+ 	</LinearLayout>
+    
+    
+    <EditText
+         android:id="@+id/editTextSMSw2s"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_weight="334.78"
+         android:gravity="top"
+         android:hint="Message"
+         android:inputType="textMultiLine"
+         android:lines="5" />
+   
+
+<LinearLayout  android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:weightSum="100"
+       android:orientation="horizontal" >"
+    
+    <Button
+        android:id="@+id/text_inboxbtnw2s"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:text="Inbox" />
+    
+    <ImageButton
+        android:id="@+id/text_voicebtnw2s"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:contentDescription="speak"
+        android:src="@android:drawable/ic_btn_speak_now" />
+    
+ </LinearLayout>
+    <Button
+        android:id="@+id/text_sendbtnw2s"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Send" />
+     </LinearLayout>
+ </ScrollView>
+</RelativeLayout>

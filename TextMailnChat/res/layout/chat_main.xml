@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backimg2"
+    android:orientation="vertical" >
+    
+     <ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="0dip"
+    android:layout_weight="100"
+    android:orientation="vertical" >
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="152dp"
+       android:weightSum="100"
+       android:orientation="vertical" >
+    
+    <ListView
+        android:id="@+id/in"
+        android:layout_width="match_parent"
+        android:layout_height="212dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll" />
+
+        <EditText
+            android:id="@+id/edit_text_out"
+            android:layout_width="match_parent"
+            android:hint="Your message"
+            android:layout_height="49dp"
+            android:layout_weight="1"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+        
+        
+	<LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100">
+    
+	    <ImageButton
+	        android:id="@+id/voice_btn"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="speak"
+	        android:layout_weight="50"
+	        android:src="@android:drawable/ic_btn_speak_now" />
+    
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:text="Send" />
+
+    </LinearLayout>
+    
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
