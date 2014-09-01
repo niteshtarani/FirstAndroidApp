@@ -9,45 +9,91 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Readmsg extends Activity
 {
 	String s="";
-	ListView list;
-	String[] msgs;
-	String[] addr;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.msglist);
 		
-		int i=0;
-		Uri uriSMSURI = Uri.parse("content://sms/inbox");
-	    Cursor cur = getContentResolver().query(uriSMSURI, null, null, null,null);
-	    msgs = new String[cur.getCount()];
-	    addr = new String[cur.getCount()];
-	    while (cur.moveToNext()) 
-	    {
-	        addr[i] = cur.getString(2)+": ";
-	        msgs[i] = cur.getString(cur.getColumnIndexOrThrow("body"));
-	        i++;
-	        
-	    }
-	    CustomList adapter = new CustomList(Readmsg.this, msgs, addr);
-	    list=(ListView)findViewById(R.id.lv);
-	    list.setAdapter(adapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view,int position, long id)
-                {
-                    s=msgs[+position];
-                    finish();
-                }
-            });
-  }
+		ListView smslist = (ListView) findViewById(R.id.lv);
+		
+		final String[] addrss=readsms();
+		
+		smslist.setAdapter(new ArrayAdapter<String>(Readmsg.this,android.R.layout.simple_list_item_1,addrss));
+		
+		smslist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Intent fetchmsgintent = new Intent("com.example.TextMailnChat.READMSGUTIL");
+				Bundle b = new Bundle();
+				s=addrss[arg2];
+				b.putString("addr", addrss[arg2]);
+				fetchmsgintent.putExtras(b);
+				startActivityForResult(fetchmsgintent, 1);
+				
+			}
+			
+		});
+		
+	}
 	
+	
+	
+	public String[] readsms()
+	{
+		int i=0;
+		  Uri uriSMSURI = Uri.parse("content://sms/inbox");
+		  String[] projection = new String[] { "_id", "address", "person", "body", "date", "type" };
+	      Cursor cur = getContentResolver().query(uriSMSURI, projection, null, null,null);
+	      String[] tempmsg = new String[cur.getCount()];
+	      while (cur.moveToNext()) 
+	      {
+	          tempmsg[i] = cur.getString(cur.getColumnIndexOrThrow("address"));
+	          i++;
+	      }
+	      return removedup(tempmsg);
+	}
+	
+	String[] removedup(String src[])
+	{
+		int len=src.length;
+		for(int i=0;i<len;i++)
+		{
+			for(int j=i+1;j<len;)
+			{
+				if(src[i].equals(src[j]))
+					src[j]=src[--len];
+				else
+					j++;
+			}
+		}
+		String returnstr[]= new String[len];
+		for(int i=0;i<len;i++)
+			returnstr[i]=src[i];
+		
+		return returnstr;
+	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		if (resultCode == RESULT_OK && null != data)
+		{
+			s=data.getExtras().getString("msgbody");
+			
+		}
+		finish();
+	}
+
 	
 	public void finish() {
 		  // Prepare data intent 

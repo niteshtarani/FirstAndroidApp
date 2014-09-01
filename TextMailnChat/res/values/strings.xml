@@ -2,6 +2,10 @@
 <resources>
 
     <string name="app_name">TextMailnChat</string>
+    <string name="speak">Speak</string>
+    <string name="Send">Send</string>
+    <string name="about">\n\tTHE EMAIL, TEXT and CHAT PACKAGE\n\n BY:  Nitesh Tarani \t\t\t\t\n\n\t\t\t M.C.A. IIT ROORKEE</string> 
+    
     
     <!--  BluetoothChat -->
    <string name="send">Send</string>

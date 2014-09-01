@@ -28,7 +28,7 @@
             android:id="@+id/edit_text_out"
             android:layout_width="match_parent"
             android:hint="Your message"
-            android:layout_height="49dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:ems="10" >
 
@@ -46,7 +46,7 @@
 	        android:id="@+id/voice_btn"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:contentDescription="speak"
+	        android:contentDescription="@string/speak"
 	        android:layout_weight="50"
 	        android:src="@android:drawable/ic_btn_speak_now" />
     
@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="50"
-        android:text="Send" />
+        android:text="@string/Send" />
 
     </LinearLayout>
     
