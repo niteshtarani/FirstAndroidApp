@@ -7,12 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Readmsgutil extends Activity{
 
 	String copy="";
+	private  CustomArrayAdapter adapter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -24,9 +24,11 @@ public class Readmsgutil extends Activity{
 		
 		ListView msglist = (ListView) findViewById(R.id.bodylist);
 		
-		final String msgs[] = readsmsbody(number);
+		adapter = new CustomArrayAdapter(getApplicationContext(), R.layout.bubble_item);
 		
-		msglist.setAdapter(new ArrayAdapter<String>(Readmsgutil.this,android.R.layout.simple_list_item_1,msgs));
+		msglist.setAdapter(adapter);
+		
+		final String msgs[] = readsmsbody(number);
 		
 		msglist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 		@Override
@@ -52,6 +54,7 @@ public class Readmsgutil extends Activity{
 	      String[] allmsgs = new String[cur.getCount()];
 	      while (cur.moveToNext()) 
 	      {
+	    	  adapter.add(cur.getString(cur.getColumnIndexOrThrow("body")));
 	          allmsgs[i] = cur.getString(cur.getColumnIndexOrThrow("body"));
 	          i++;
 	      }

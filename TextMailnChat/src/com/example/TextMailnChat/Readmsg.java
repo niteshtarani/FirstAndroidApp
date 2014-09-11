@@ -51,7 +51,7 @@ public class Readmsg extends Activity
 	public String[] readsms()
 	{
 		int i=0;
-		  Uri uriSMSURI = Uri.parse("content://sms/inbox");
+		  Uri uriSMSURI = Uri.parse("content://sms/");
 		  String[] projection = new String[] { "_id", "address", "person", "body", "date", "type" };
 	      Cursor cur = getContentResolver().query(uriSMSURI, projection, null, null,null);
 	      String[] tempmsg = new String[cur.getCount()];
@@ -89,9 +89,10 @@ public class Readmsg extends Activity
 		if (resultCode == RESULT_OK && null != data)
 		{
 			s=data.getExtras().getString("msgbody");
-			
+			if(!s.equalsIgnoreCase(""))
+				finish();
 		}
-		finish();
+		
 	}
 
 	

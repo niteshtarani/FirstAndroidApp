@@ -92,7 +92,7 @@ class MessageSender extends AsyncTask<String, Void, String>
 	protected String doInBackground(String... params) {
 		try
 		{
-			URL url = new URL("http://www.foamsnet.com/smsapi/send.php?username=" + username + "&password=" + password + "&to=" + to + "&msg=" + URLEncoder.encode(msg));
+			URL url = new URL("http://www.foamsnet.com/smsapi/send.php?username=" + username + "&password=" + password + "&to=" + to + "&msg=" + URLEncoder.encode(msg,"UTF-8"));
 	        URLConnection urlc = url.openConnection();
 	        BufferedReader sin = new BufferedReader(new InputStreamReader(urlc.getInputStream()));
 	        String inputLine = sin.readLine();
