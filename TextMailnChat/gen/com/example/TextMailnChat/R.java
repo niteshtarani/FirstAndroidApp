@@ -31,7 +31,7 @@ public final class R {
         public static final int backimg4=0x7f020003;
         public static final int bubble_yellow=0x7f020004;
         public static final int ic_launcher=0x7f020005;
-        public static final int url=0x7f020006;
+        public static final int splashimg=0x7f020006;
     }
     public static final class id {
         public static final int ScrollView01=0x7f0b0021;
