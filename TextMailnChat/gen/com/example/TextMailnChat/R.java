@@ -25,13 +25,12 @@ public final class R {
         public static final int activity_vertical_margin=0x7f070001;
     }
     public static final class drawable {
-        public static final int backimg1=0x7f020000;
-        public static final int backimg2=0x7f020001;
-        public static final int backimg3=0x7f020002;
-        public static final int backimg4=0x7f020003;
-        public static final int bubble_yellow=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int splashimg=0x7f020006;
+        public static final int backimg2=0x7f020000;
+        public static final int backimg3=0x7f020001;
+        public static final int bubble_green=0x7f020002;
+        public static final int bubble_yellow=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int splashimg=0x7f020005;
     }
     public static final class id {
         public static final int ScrollView01=0x7f0b0021;
@@ -95,12 +94,11 @@ public final class R {
         public static final int chat_main=0x7f030004;
         public static final int device_list=0x7f030005;
         public static final int device_name=0x7f030006;
-        public static final int message=0x7f030007;
-        public static final int msglist=0x7f030008;
-        public static final int msglistbody=0x7f030009;
-        public static final int splash=0x7f03000a;
-        public static final int way2sms=0x7f03000b;
-        public static final int way2sms_settings=0x7f03000c;
+        public static final int msglist=0x7f030007;
+        public static final int msglistbody=0x7f030008;
+        public static final int splash=0x7f030009;
+        public static final int way2sms=0x7f03000a;
+        public static final int way2sms_settings=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;

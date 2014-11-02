@@ -24,7 +24,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -65,7 +64,7 @@ public class BluetoothChat extends Activity {
     // Name of the connected device
     private String mConnectedDeviceName = null;
     // Array adapter for the conversation thread
-    private ArrayAdapter<String> mConversationArrayAdapter;
+    private CustomArrayAdapter mConversationArrayAdapter;
     // String buffer for outgoing messages
     private StringBuffer mOutStringBuffer;
     // Local Bluetooth adapter
@@ -133,7 +132,7 @@ public class BluetoothChat extends Activity {
         Log.d(TAG, "setupChat()");
 
         // Initialize the array adapter for the conversation thread
-        mConversationArrayAdapter = new ArrayAdapter<String>(this, R.layout.message);
+        mConversationArrayAdapter = new CustomArrayAdapter(this, R.layout.bubble_item);
         mConversationView = (ListView) findViewById(R.id.in);
         mConversationView.setAdapter(mConversationArrayAdapter);
 
@@ -296,13 +295,13 @@ public class BluetoothChat extends Activity {
                 byte[] writeBuf = (byte[]) msg.obj;
                 // construct a string from the buffer
                 String writeMessage = new String(writeBuf);
-                mConversationArrayAdapter.add("Me:  " + writeMessage);
+                mConversationArrayAdapter.add(new OneComment("Me:  " + writeMessage,true));
                 break;
             case MESSAGE_READ:
                 byte[] readBuf = (byte[]) msg.obj;
                 // construct a string from the valid bytes in the buffer
                 String readMessage = new String(readBuf, 0, msg.arg1);  
-                mConversationArrayAdapter.add(mConnectedDeviceName+":  " + readMessage);
+                mConversationArrayAdapter.add(new OneComment(mConnectedDeviceName+":  " + readMessage,false));
                 boolean chatsound=getPrefs.getBoolean("chat_sound", true);
                 if(chatsound)
                 	notificationtone.start();

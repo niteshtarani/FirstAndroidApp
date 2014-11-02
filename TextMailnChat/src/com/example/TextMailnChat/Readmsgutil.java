@@ -54,7 +54,7 @@ public class Readmsgutil extends Activity{
 	      String[] allmsgs = new String[cur.getCount()];
 	      while (cur.moveToNext()) 
 	      {
-	    	  adapter.add(cur.getString(cur.getColumnIndexOrThrow("body")));
+	    	  adapter.add(new OneComment(cur.getString(cur.getColumnIndexOrThrow("body")),false));
 	          allmsgs[i] = cur.getString(cur.getColumnIndexOrThrow("body"));
 	          i++;
 	      }

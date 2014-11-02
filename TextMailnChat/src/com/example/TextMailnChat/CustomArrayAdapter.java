@@ -1,6 +1,5 @@
 package com.example.TextMailnChat;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,14 +14,14 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class CustomArrayAdapter extends ArrayAdapter<String> {
+public class CustomArrayAdapter extends ArrayAdapter<OneComment> {
 
 	private TextView Name;
-	private List<String> values = new ArrayList<String>();
+	private List<OneComment> values = new ArrayList<OneComment>();
 	private LinearLayout wrapper;
 
 	@Override
-	public void add(String object) {
+	public void add(OneComment object) {
 		values.add(object);
 		super.add(object);
 	}
@@ -35,7 +34,7 @@ public class CustomArrayAdapter extends ArrayAdapter<String> {
 		return this.values.size();
 	}
 
-	public String getItem(int index) {
+	public OneComment getItem(int index) {
 		return this.values.get(index);
 	}
 
@@ -48,14 +47,22 @@ public class CustomArrayAdapter extends ArrayAdapter<String> {
 
 		wrapper = (LinearLayout) row.findViewById(R.id.wrapper);
 
-		String coment = getItem(position);
+		OneComment coment = getItem(position);
 
 		Name = (TextView) row.findViewById(R.id.comment);
 
-		Name.setText(coment);
+		Name.setText(coment.comment);
 
-		Name.setBackgroundResource(R.drawable.bubble_yellow);
-		wrapper.setGravity(Gravity.LEFT);
+		if(coment.mine)
+		{
+			Name.setBackgroundResource(R.drawable.bubble_green);
+			wrapper.setGravity(Gravity.RIGHT);
+		}
+		else
+		{
+			Name.setBackgroundResource(R.drawable.bubble_yellow);
+			wrapper.setGravity(Gravity.LEFT);
+		}
 
 		return row;
 	}
