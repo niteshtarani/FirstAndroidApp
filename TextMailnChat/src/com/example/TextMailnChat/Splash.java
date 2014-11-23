@@ -48,6 +48,9 @@ public class Splash extends Activity{
 				finally
 				{
 					Intent openmain=new Intent("com.example.TextMailnChat.TEXT");
+					Bundle b = new Bundle();
+					b.putString("txtmsg", "");
+					openmain.putExtras(b);
 					startActivity(openmain);
 					
 				}

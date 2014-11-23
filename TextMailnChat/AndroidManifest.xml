@@ -124,6 +124,40 @@
             </intent-filter>
         </activity>
         
+          <activity
+            android:name="com.example.TextMailnChat.Launchbyspeech"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.TextMailnChat.LAUNCHBYSPEECH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+          <activity
+            android:name="com.example.TextMailnChat.WidgetInstructions"
+            android:theme="@android:style/Theme.Dialog"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.TextMailnChat.WIDGETINSTRUCTIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+		
+		<receiver
+        android:icon="@drawable/widget_icon"
+        android:label="TextMail Widget"
+        android:name="com.example.TextMailnChat.Textmailwidget">
+        <intent-filter >
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+       </intent-filter>
+
+       <meta-data
+          android:name="android.appwidget.provider"
+          android:resource="@xml/textmailwidget" />
+    </receiver>
+        
     </application>
 
 </manifest>

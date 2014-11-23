@@ -31,23 +31,24 @@ public final class R {
         public static final int bubble_yellow=0x7f020003;
         public static final int ic_launcher=0x7f020004;
         public static final int splashimg=0x7f020005;
+        public static final int widget_icon=0x7f020006;
     }
     public static final class id {
         public static final int ScrollView01=0x7f0b0021;
-        public static final int Text_menu=0x7f0b002c;
-        public static final int about_menu=0x7f0b0031;
+        public static final int Text_menu=0x7f0b002f;
+        public static final int about_menu=0x7f0b0035;
         public static final int bglabel=0x7f0b0026;
         public static final int bodylist=0x7f0b001a;
         public static final int btnSave=0x7f0b002a;
         public static final int button_scan=0x7f0b0018;
         public static final int button_send=0x7f0b0013;
-        public static final int chat_menu=0x7f0b002b;
+        public static final int chat_menu=0x7f0b002e;
         public static final int chkbg=0x7f0b0027;
         public static final int chklogsent=0x7f0b0025;
         public static final int comment=0x7f0b000f;
         public static final int contacts_btn=0x7f0b0009;
         public static final int contacts_btnw2s=0x7f0b001c;
-        public static final int discoverable=0x7f0b0033;
+        public static final int discoverable=0x7f0b0037;
         public static final int editTextPhoneNo=0x7f0b0008;
         public static final int editTextPhoneNow2s=0x7f0b001b;
         public static final int editTextSMS=0x7f0b000a;
@@ -56,19 +57,19 @@ public final class R {
         public static final int email_address_=0x7f0b0001;
         public static final int email_body=0x7f0b0003;
         public static final int email_inbox=0x7f0b0004;
-        public static final int email_menu=0x7f0b002e;
+        public static final int email_menu=0x7f0b0031;
         public static final int email_sendbtn=0x7f0b0006;
         public static final int email_subject=0x7f0b0002;
         public static final int email_voicebtn=0x7f0b0005;
         public static final int in=0x7f0b0010;
-        public static final int insecure_connect_scan=0x7f0b0032;
+        public static final int insecure_connect_scan=0x7f0b0036;
         public static final int linearLayout1=0x7f0b0007;
         public static final int logsentlabel=0x7f0b0024;
         public static final int lv=0x7f0b0019;
         public static final int new_devices=0x7f0b0017;
         public static final int paired_devices=0x7f0b0015;
-        public static final int pref_menu=0x7f0b002f;
-        public static final int settings_menu=0x7f0b0030;
+        public static final int pref_menu=0x7f0b0032;
+        public static final int settings_menu=0x7f0b0033;
         public static final int simcontacts=0x7f0b0028;
         public static final int simcontactschk=0x7f0b0029;
         public static final int text_about=0x7f0b0000;
@@ -78,12 +79,16 @@ public final class R {
         public static final int text_sendbtnw2s=0x7f0b0020;
         public static final int text_voicebtn=0x7f0b000c;
         public static final int text_voicebtnw2s=0x7f0b001f;
+        public static final int text_widgetinfo=0x7f0b002b;
         public static final int title_new_devices=0x7f0b0016;
         public static final int title_paired_devices=0x7f0b0014;
         public static final int txtpassword=0x7f0b0023;
         public static final int txtusername=0x7f0b0022;
         public static final int voice_btn=0x7f0b0012;
-        public static final int way2sms_menu=0x7f0b002d;
+        public static final int way2sms_menu=0x7f0b0030;
+        public static final int wbutton=0x7f0b002d;
+        public static final int widget_menu=0x7f0b0034;
+        public static final int wlayout=0x7f0b002c;
         public static final int wrapper=0x7f0b000e;
     }
     public static final class layout {
@@ -99,6 +104,8 @@ public final class R {
         public static final int splash=0x7f030009;
         public static final int way2sms=0x7f03000a;
         public static final int way2sms_settings=0x7f03000b;
+        public static final int widgetinfo=0x7f03000c;
+        public static final int widgetlayout=0x7f03000d;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
@@ -112,29 +119,30 @@ public final class R {
         public static final int Send=0x7f080002;
         public static final int about=0x7f080003;
         public static final int app_name=0x7f080000;
-        public static final int bt_not_enabled_leaving=0x7f080006;
-        public static final int button_scan=0x7f080010;
-        public static final int discoverable=0x7f080013;
-        public static final int insecure_connect=0x7f080012;
-        public static final int none_found=0x7f08000d;
-        public static final int none_paired=0x7f08000c;
-        public static final int not_connected=0x7f080005;
+        public static final int bt_not_enabled_leaving=0x7f080007;
+        public static final int button_scan=0x7f080011;
+        public static final int discoverable=0x7f080014;
+        public static final int insecure_connect=0x7f080013;
+        public static final int none_found=0x7f08000e;
+        public static final int none_paired=0x7f08000d;
+        public static final int not_connected=0x7f080006;
         /**   DeviceListActivity 
          */
-        public static final int scanning=0x7f08000a;
+        public static final int scanning=0x7f08000b;
         /**  Options Menu 
          */
-        public static final int secure_connect=0x7f080011;
-        public static final int select_device=0x7f08000b;
+        public static final int secure_connect=0x7f080012;
+        public static final int select_device=0x7f08000c;
         /**   BluetoothChat 
          */
-        public static final int send=0x7f080004;
+        public static final int send=0x7f080005;
         public static final int speak=0x7f080001;
-        public static final int title_connected_to=0x7f080008;
-        public static final int title_connecting=0x7f080007;
-        public static final int title_not_connected=0x7f080009;
-        public static final int title_other_devices=0x7f08000f;
-        public static final int title_paired_devices=0x7f08000e;
+        public static final int title_connected_to=0x7f080009;
+        public static final int title_connecting=0x7f080008;
+        public static final int title_not_connected=0x7f08000a;
+        public static final int title_other_devices=0x7f080010;
+        public static final int title_paired_devices=0x7f08000f;
+        public static final int winfo=0x7f080004;
     }
     public static final class style {
         /** 
@@ -166,5 +174,6 @@ public final class R {
     }
     public static final class xml {
         public static final int prefs=0x7f040000;
+        public static final int textmailwidget=0x7f040001;
     }
 }

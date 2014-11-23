@@ -78,6 +78,9 @@ public class Email extends Activity implements OnClickListener{
 			
 			finish();
 			Intent int_text = new Intent("com.example.TextMailnChat.TEXT");
+			Bundle bt = new Bundle();
+			bt.putString("txtmsg", etbody.getText().toString());
+			int_text.putExtras(bt);
 			startActivity(int_text);
 			break;
 			
@@ -102,6 +105,12 @@ public class Email extends Activity implements OnClickListener{
 		
 			Intent chatintent = new Intent("com.example.TextMailnChat.BLUETOOTHCHAT");
 			startActivity(chatintent);
+			break;
+			
+		case R.id.widget_menu:
+			
+			Intent widgetpopup = new Intent("com.example.TextMailnChat.WIDGETINSTRUCTIONS");
+			startActivity(widgetpopup);
 			break;
 						
 		}
@@ -172,9 +181,11 @@ public class Email extends Activity implements OnClickListener{
 
 				ArrayList<String> text = data
 						.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-				
-				etbody.setText(etbody.getText().toString()+" "+text.get(0));
-				
+				String readstr = etbody.getText().toString();
+				if(readstr.equals(""))
+					etbody.setText(text.get(0));
+				else
+					etbody.setText(readstr+" "+text.get(0));
 			}
 			break;
 			
@@ -183,7 +194,14 @@ public class Email extends Activity implements OnClickListener{
 			{
 				String result = data.getExtras().getString("returnKey");
 				if(result.compareTo("")!=0)
-					etbody.setText(result);
+				{
+					String readstr = etbody.getText().toString();
+					if(readstr.equals(""))
+						etbody.setText(result);
+					else
+						etbody.setText(readstr+" "+result);
+				}
+					
 			}
 			
 			break;

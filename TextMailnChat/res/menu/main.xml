@@ -35,6 +35,12 @@
         android:title="Way2sms Settings"/>
     
     <item
+        android:id="@+id/widget_menu"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Widget Instructions"/>
+    
+    <item
         android:id="@+id/about_menu"
         android:orderInCategory="100"
         android:showAsAction="never"

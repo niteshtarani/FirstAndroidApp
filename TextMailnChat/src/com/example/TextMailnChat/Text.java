@@ -51,6 +51,9 @@ public class Text extends Activity implements OnClickListener{
 		text_voice.setOnClickListener(this);
 		text_contacts.setOnClickListener(this);
 		text_inbx.setOnClickListener(this);
+		
+		Bundle recv = getIntent().getExtras();
+		txtSMS.setText(recv.getString("txtmsg"));
 	}
 
 	@Override
@@ -106,6 +109,12 @@ public class Text extends Activity implements OnClickListener{
 			
 			Intent chatintent = new Intent("com.example.TextMailnChat.BLUETOOTHCHAT");
 			startActivity(chatintent);
+			break;
+		
+		case R.id.widget_menu:
+			
+			Intent widgetpopup = new Intent("com.example.TextMailnChat.WIDGETINSTRUCTIONS");
+			startActivity(widgetpopup);
 			break;
 					
 		}
@@ -173,8 +182,11 @@ public class Text extends Activity implements OnClickListener{
 
 				ArrayList<String> text = data
 						.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-				
-				txtSMS.setText(txtSMS.getText().toString()+" "+text.get(0));
+				String readstr = txtSMS.getText().toString();
+				if(readstr.equals(""))
+					txtSMS.setText(text.get(0));
+				else
+					txtSMS.setText( readstr+" "+text.get(0));
 				
 			}
 			break;
@@ -211,7 +223,15 @@ public class Text extends Activity implements OnClickListener{
 				{
 					String result = data.getExtras().getString("returnKey");
 					if(result.compareTo("")!=0)
-						txtSMS.setText(result);
+					{
+						String readstr = txtSMS.getText().toString(); 
+						if(readstr.equals(""))
+							txtSMS.setText(result);
+						else
+							txtSMS.setText(readstr+" "+result);
+							
+					}
+						
 				}
 				
 				break;

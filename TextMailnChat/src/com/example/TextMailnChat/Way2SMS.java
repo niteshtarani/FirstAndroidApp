@@ -176,6 +176,9 @@ public class Way2SMS extends Activity implements OnClickListener {
 			
 			finish();
 			Intent intnt_text = new Intent("com.example.TextMailnChat.TEXT");
+			Bundle bt = new Bundle();
+			bt.putString("txtmsg", txtSMSw2s.getText().toString());
+			intnt_text.putExtras(bt);
 			startActivity(intnt_text);
 			break;
 			
@@ -207,6 +210,12 @@ public class Way2SMS extends Activity implements OnClickListener {
 			
 			Intent chatintent = new Intent("com.example.TextMailnChat.BLUETOOTHCHAT");
 			startActivity(chatintent);
+			break;
+			
+		case R.id.widget_menu:
+			
+			Intent widgetpopup = new Intent("com.example.TextMailnChat.WIDGETINSTRUCTIONS");
+			startActivity(widgetpopup);
 			break;
 			
 		}
@@ -248,7 +257,11 @@ public class Way2SMS extends Activity implements OnClickListener {
     				ArrayList<String> text = data
     						.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
     				
-    				txtSMSw2s.setText(txtSMSw2s.getText().toString()+" "+text.get(0));
+    				String readstr = txtSMSw2s.getText().toString();
+    				if(readstr.equals(""))
+    					txtSMSw2s.setText(text.get(0));
+    				else
+    					txtSMSw2s.setText(readstr+" "+text.get(0));
     				
     			}
     			break;
@@ -258,7 +271,14 @@ public class Way2SMS extends Activity implements OnClickListener {
 				{
 					String result = data.getExtras().getString("returnKey");
 					if(result.compareTo("")!=0)
-						txtSMSw2s.setText(result);
+					{
+						String readstr = txtSMSw2s.getText().toString();
+						if(readstr.equals(""))
+							txtSMSw2s.setText(result);
+						else
+							txtSMSw2s.setText(readstr+" "+result);
+					}
+						
 				}
 				
 				break;

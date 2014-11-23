@@ -5,7 +5,7 @@
     <string name="speak">Speak</string>
     <string name="Send">Send</string>
     <string name="about">\n\tTHE EMAIL, TEXT and CHAT PACKAGE\n\n BY:  Nitesh Tarani \t\t\t\t\n\n\t\t\t M.C.A. IIT ROORKEE</string> 
-    
+    <string name="winfo">\t\t\t\t\t\tWidget Instructions\n\nDrag and drop TextMailWidget from your widgets\nPress widget icon and say \"Send message\" followed by your message to compose message directly\nOr\nSay \"send email\" followed by your message to compose email directly</string>
     
     <!--  BluetoothChat -->
    <string name="send">Send</string>
